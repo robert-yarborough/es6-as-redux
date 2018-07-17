@@ -1,7 +1,7 @@
 import createStore  from './_store/createStore';
 import { todos } from './_reducers/todos';
 //helpers
-import { randomId } from "./_helpers/randomId";
+import { randomId } from './_helpers/randomId';
 
 
 // create a higher-order function, to act as state and action wrapper for context
@@ -14,11 +14,11 @@ function app (state = {}, action) {
 
 // create store reference
 const store = createStore(app);
-console.log(store.getState());// undefined because the store hasn't been called with an action
+//console.log(store.getState());// undefined because the store hasn't been called with an action
 
 
 store.subscribe(() => {
-	console.log('new state is:', store.getState())// listens for event changes, and returns the values
+	console.log('new state is:', store.getState());// listens for event changes, and returns the values
 });
 
 
@@ -49,9 +49,9 @@ function addTodo(){
 			id: randomId(),
 			complete: false
 		}
-	})
-}
+	});
 
+}
 
 
 
